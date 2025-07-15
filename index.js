@@ -73,6 +73,10 @@ async function run() {
       res.send(result);
     });
 
+    app.get("/available-foods", async (req, res) => {
+      const result = await foodsCollection.find( {status: "available"}).toArray();
+      res.send(result);
+    });
 
 
   } finally {
