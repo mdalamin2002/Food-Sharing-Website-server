@@ -77,6 +77,11 @@ async function run() {
       const result = await foodsCollection.find( {status: "available"}).toArray();
       res.send(result);
     });
+    app.get("/details/:id", async (req, res) => {
+      const query = { _id: new ObjectId(req.params.id) };
+      const result = await foodsCollection.findOne(query);
+      res.send(result);
+    });
 
 
   } finally {
