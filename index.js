@@ -88,7 +88,14 @@ async function run() {
     });
 
      app.get("/my-foods", verifyFirebaseToken, async (req, res) => {
-      const result = await foodsCollection.find( {donorEmail: req.query.email}).toArray();
+
+      const result = await foodsCollection.find( {donorEmail: req.firebaseUser.email}).toArray();
+      res.send(result);
+    });
+    
+    app.delete("/delete-food/:id", async (req, res) => {
+      const query = { _id: new ObjectId(req.params.id) };
+      const result = await foodsCollection.deleteOne(query);
       res.send(result);
     });
 
