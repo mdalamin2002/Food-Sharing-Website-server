@@ -112,11 +112,47 @@ async function run() {
       res.send(result);
     });
 
+    app.patch("/request/:id", verifyFirebaseToken, async (req, res) => {
+      const query = { _id: new ObjectId(req.params.id) };
+      const result = await foodsCollection.updateOne(query, {
+        $set: { status: "requested", requestedBy: req.firebaseUser.email,
+           requestDate: new Date(),
+         },
+      });
+      res.send(result);
+    });
+
+    // // Get all requests by user email
+    // app.get("/my-requests", async (req, res) => {
+    //   const email = req.query.email;
+    //   if (!email) {
+    //     return res.status(400).send({ message: "Email is required" });
+    //   }
+    //   const result = await foodsCollection
+    //     .find({ userEmail: email })
+    //     .toArray();
+    //   res.send(result);
+    // });
+
+    app.get("/requested-foods", async (req, res) => {
+      const result = await foodsCollection
+        .find({ status: "requested" })
+        .toArray();
+      res.send(result);
+    });
+
     app.get("/my-foods", verifyFirebaseToken, async (req, res) => {
       const result = await foodsCollection
         .find({ donorEmail: req.firebaseUser.email })
         .toArray();
       res.send(result);
+    });
+
+     app.get("/my-requests",  async (req, res) => {
+      const email = req.query.email;
+      console.log(email);
+      const foods = await foodsCollection.find({ requestedBy: email }).toArray();
+      res.send(foods);
     });
 
     app.delete("/delete-food/:id", async (req, res) => {
