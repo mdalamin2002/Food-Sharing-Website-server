@@ -77,12 +77,20 @@ async function run() {
       const result = await foodsCollection.find( {status: "available"}).toArray();
       res.send(result);
     });
+    app.get("/featured-foods", async (req, res) => {
+      const result = await foodsCollection.find( {status: "available"}).sort({createdAt: -1}).limit(6).toArray();
+      res.send(result);
+    });
     app.get("/details/:id", async (req, res) => {
       const query = { _id: new ObjectId(req.params.id) };
       const result = await foodsCollection.findOne(query);
       res.send(result);
     });
 
+     app.get("/my-foods", verifyFirebaseToken, async (req, res) => {
+      const result = await foodsCollection.find( {donorEmail: req.query.email}).toArray();
+      res.send(result);
+    });
 
   } finally {
   }
