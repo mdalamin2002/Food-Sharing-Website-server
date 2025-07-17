@@ -155,11 +155,24 @@ async function run() {
       res.send(foods);
     });
 
+    //
+
+//delete request 
+
+app.delete("/delete-request/:id", async (req, res) => {
+  const query = { _id: new ObjectId(req.params.id) };
+  const result = await foodsCollection.deleteOne(query);
+  res.send(result);
+});
+
+
     app.delete("/delete-food/:id", async (req, res) => {
       const query = { _id: new ObjectId(req.params.id) };
       const result = await foodsCollection.deleteOne(query);
       res.send(result);
     });
+
+
   } finally {
   }
 }
@@ -178,8 +191,3 @@ app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
 
-/*
-1. send token from client side
-2. receive from server
-3. decode the token from server
-*/
