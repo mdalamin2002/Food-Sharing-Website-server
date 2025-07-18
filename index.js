@@ -61,7 +61,7 @@ const verifyFirebaseToken = async (req, res, next) => {
 
 async function run() {
   try {
-    await client.connect();
+    // await client.connect();
     const db = client.db("db_name");
     const foodsCollection = db.collection("foods");
     console.log("Connected to MongoDB");
@@ -92,12 +92,7 @@ async function run() {
       res.send(result);
     });
 
-    // app.get("/available-foods", async (req, res) => {
-    //   const result = await foodsCollection
-    //     .find({ status: "available" })
-    //     .toArray();
-    //   res.send(result);
-    // });
+    
 
     app.get("/featured-foods", async (req, res) => {
       const result = await foodsCollection
