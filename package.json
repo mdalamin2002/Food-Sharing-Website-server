@@ -1,30 +1,21 @@
-# 🏢 Uddyog Server
-
-**Uddyog Server** is a backend service built with **Node.js**, **Express**, **MongoDB**, and **Firebase Admin**. It provides APIs for authentication, authorization, and database management.
-
----
-
-## 🚀 Features
-
-* ✅ RESTful API with **Express.js**
-* ✅ Secure authentication using **JWT**
-* ✅ Firebase Admin integration
-* ✅ MongoDB database support
-* ✅ CORS-enabled for frontend communication
-* ✅ Environment variables via **dotenv**
-* ✅ Nodemon for development auto-restart
-
----
-
-## 📦 Technologies Used
-
-* [Node.js](https://nodejs.org/)
-* [Express.js](https://expressjs.com/)
-* [MongoDB](https://www.mongodb.com/)
-* [Firebase Admin SDK](https://firebase.google.com/docs/admin/setup)
-* [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
-* [dotenv](https://www.npmjs.com/package/dotenv)
-* [cors](https://www.npmjs.com/package/cors)
-
----
-
+{
+  "name": "uddyog-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "firebase-admin": "^13.4.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.16.0"
+  }
+}  

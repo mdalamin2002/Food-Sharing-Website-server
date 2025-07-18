@@ -11,76 +11,35 @@ client Link: https://github.com/mdalamin2002/Food-Sharing-Website-client
 
 Server Link: https://github.com/mdalamin2002/Food-Sharing-Website-server
 
-✅ **Authentication System**
+🏢 Uddyog Server
+Uddyog Server is a backend service built with Node.js, Express, MongoDB, and Firebase Admin. It provides APIs for authentication, authorization, and database management.
 
-- Firebase Authentication (Email/Password, Google Sign-in)
-- Protected Routes using PrivateRoute
+🚀 Features
+✅ RESTful API with Express.js
 
-✅ **Food Management**
+✅ Secure authentication using JWT
 
-- Add, Update, Delete food items (only by the donor)
-- View all available foods
+✅ Firebase Admin integration
 
-✅ **Dynamic Layout & Search**
+✅ MongoDB database support
 
-- Switch between **2-column** and **3-column** layouts
-- **Search foods by name** (Server-side filtering)
+✅ CORS-enabled for frontend communication
 
-✅ **Modern UI**
+✅ Environment variables via dotenv
 
-- Responsive design using **Tailwind CSS** & **DaisyUI**
-- **Lottie animation** for loading states
+✅ Nodemon for development auto-restart
 
-✅ **TanStack Query Integration**
+📦 Technologies Used
+Node.js
 
-- Optimized data fetching and caching
-- Mutation for food addition and updates
+Express.js
 
-✅ **Toast & Alerts**
+MongoDB
 
-- SweetAlert2 for user confirmations
-- React Hot Toast for notifications
+Firebase Admin SDK
 
----
+jsonwebtoken
 
-## 🛠 Tech Stack
+dotenv
 
-**Frontend:**
-
-- React (Vite)
-- Tailwind CSS + DaisyUI
-- React Router (v7)
-- TanStack React Query
-- Lottie Animation
-
-**Backend:**
-
-- Node.js, Express.js
-- MongoDB Database
-
-**Other Tools:**
-
-- Firebase Authentication
-- Axios for API calls
-
-## 📚 Available Pages
-
-- **Home Page** – Overview & Featured Foods
-- **Available Foods** – Browse food, search, filter
-- **Add Food** – Donors can add new food items
-- **My Foods** – Manage donated foods
-- **Food Request** – Track requested items
-- **Authentication** – Login & Registration
-
----
-
-## 🔒 Authentication Flow
-
-- **Not Logged In:** Can only see Home & Available Foods, must login to donate/request
-- **Logged In:** Full access, including Add Food, My Foods, My Requests
-
----
-
-## 👨‍💻 Author
-
-Developed by **\[MD AL AMIN]**
+cors
