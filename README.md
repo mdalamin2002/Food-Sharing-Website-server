@@ -43,3 +43,8 @@ jsonwebtoken
 dotenv
 
 cors
+2️⃣ Install dependencies
+bash
+Copy
+Edit
+npm install
