@@ -6,7 +6,7 @@ A web application that allows users to **share surplus food** and help reduce fo
 
 Repository\*\*
 
-live Link: https://foodshareforpoor.netlify.app/
+live Link: https://food-sharing-website-client.vercel.app/
 client Link: https://github.com/mdalamin2002/Food-Sharing-Website-client
 
 Server Link: https://github.com/mdalamin2002/Food-Sharing-Website-server
